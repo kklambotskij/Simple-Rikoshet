@@ -26,7 +26,7 @@ public class Gunner : MonoBehaviour
     public void Shoot()
     {
         Projectile projectile = Instantiate(projectileObject, projectileStart.position, Quaternion.identity).GetComponent<Projectile>();
-        projectile.SetDirection(transform.forward);
+        projectile.transform.eulerAngles = transform.rotation.eulerAngles;
         projectile.SetGunner(this);
     }
 
